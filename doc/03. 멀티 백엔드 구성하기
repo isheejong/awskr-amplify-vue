@@ -1,0 +1,155 @@
+
+## MultiBackend
+
+1. check the current environment
+    ```
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store (master) $ amplify status
+    Current Environment: dev
+    
+    | Category | Resource name | Operation | Provider plugin |
+    | -------- | ------------- | --------- | --------------- |
+    
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store (master) $
+    
+    ```
+
+2. add master environment
+    
+    ```
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store (master) $ amplify env add
+    Note: It is recommended to run this command from the root of your app directory
+    ? Do you want to use an existing environment? No
+    ? Enter a name for the environment prod
+    Using default provider  awscloudformation
+    
+    For more information on AWS Profiles, see:
+    https://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html
+    
+    ? Do you want to use an AWS profile? Yes
+    ? Please choose the profile you want to use amplify
+    Adding backend environment prod to AWS Amplify Console app: dqsqjwayqt68m
+    ⠴ Initializing project in the cloud...
+    
+    CREATE_IN_PROGRESS amplify-awsserverlessecommer-prod-10048 AWS::CloudFormation::Stack Wed Feb 26 2020 01:00:49 GMT+0000 (Coordinated Universal Time) User Initiated             
+    CREATE_IN_PROGRESS UnauthRole                              AWS::IAM::Role             Wed Feb 26 2020 01:00:52 GMT+0000 (Coordinated Universal Time)                            
+    CREATE_IN_PROGRESS DeploymentBucket                        AWS::S3::Bucket            Wed Feb 26 2020 01:00:52 GMT+0000 (Coordinated Universal Time)                            
+    CREATE_IN_PROGRESS AuthRole                                AWS::IAM::Role             Wed Feb 26 2020 01:00:52 GMT+0000 (Coordinated Universal Time)                            
+    CREATE_IN_PROGRESS UnauthRole                              AWS::IAM::Role             Wed Feb 26 2020 01:00:53 GMT+0000 (Coordinated Universal Time) Resource creation Initiated
+    CREATE_IN_PROGRESS AuthRole                                AWS::IAM::Role             Wed Feb 26 2020 01:00:54 GMT+0000 (Coordinated Universal Time) Resource creation Initiated
+    ⠦ Initializing project in the cloud...
+    
+    CREATE_IN_PROGRESS DeploymentBucket AWS::S3::Bucket Wed Feb 26 2020 01:00:54 GMT+0000 (Coordinated Universal Time) Resource creation Initiated
+    ⠹ Initializing project in the cloud...
+    
+    CREATE_COMPLETE UnauthRole AWS::IAM::Role Wed Feb 26 2020 01:01:09 GMT+0000 (Coordinated Universal Time) 
+    ⠼ Initializing project in the cloud...
+    
+    CREATE_COMPLETE AuthRole AWS::IAM::Role Wed Feb 26 2020 01:01:10 GMT+0000 (Coordinated Universal Time) 
+    ⠧ Initializing project in the cloud...
+    
+    CREATE_COMPLETE DeploymentBucket                        AWS::S3::Bucket            Wed Feb 26 2020 01:01:15 GMT+0000 (Coordinated Universal Time) 
+    CREATE_COMPLETE amplify-awsserverlessecommer-prod-10048 AWS::CloudFormation::Stack Wed Feb 26 2020 01:01:17 GMT+0000 (Coordinated Universal Time) 
+    ✔ Successfully created initial AWS cloud resources for deployments.
+    ✔ Initialized provider successfully.
+    Initialized your environment successfully.
+    
+    Your project has been successfully initialized and connected to the cloud!
+    
+    Some next steps:
+    "amplify status" will show you what you've added already and if it's locally configured or deployed
+    "amplify add <category>" will allow you to add features like user login or a backend API
+    "amplify push" will build all your local backend resources and provision it in the cloud
+    “amplify console” to open the Amplify Console and view your project status
+    "amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+    
+    Pro tip:
+    Try "amplify add api" to create a backend API and then "amplify publish" to deploy everything
+    
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store (master) $
+    
+    ```
+
+3. check current environment
+
+    ```
+
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store (master) $ amplify status
+
+    Current Environment: prod
+    
+    | Category | Resource name | Operation | Provider plugin |
+    | -------- | ------------- | --------- | --------------- |
+    
+    
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store (master) $
+    
+    ```
+
+4. check team-provider-info.json 
+
+    ```
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store/amplify (master) $ cat team-provider-info.json 
+    {
+        "dev": {
+            "awscloudformation": {
+                "AuthRoleName": "amplify-awsserverlessecommer-dev-71218-authRole",
+                "UnauthRoleArn": "arn:aws:iam::786923391258:role/amplify-awsserverlessecommer-dev-71218-unauthRole",
+                "AuthRoleArn": "arn:aws:iam::786923391258:role/amplify-awsserverlessecommer-dev-71218-authRole",
+                "Region": "ap-northeast-2",
+                "DeploymentBucketName": "amplify-awsserverlessecommer-dev-71218-deployment",
+                "UnauthRoleName": "amplify-awsserverlessecommer-dev-71218-unauthRole",
+                "StackName": "amplify-awsserverlessecommer-dev-71218",
+                "StackId": "arn:aws:cloudformation:ap-northeast-2:786923391258:stack/amplify-awsserverlessecommer-dev-71218/2937e640-579e-11ea-b1c0-0adc0288bd8a",
+                "AmplifyAppId": "dqsqjwayqt68m"
+            }
+        },
+        "prod": {
+            "awscloudformation": {
+                "AuthRoleName": "amplify-awsserverlessecommer-prod-10048-authRole",
+                "UnauthRoleArn": "arn:aws:iam::786923391258:role/amplify-awsserverlessecommer-prod-10048-unauthRole",
+                "AuthRoleArn": "arn:aws:iam::786923391258:role/amplify-awsserverlessecommer-prod-10048-authRole",
+                "Region": "ap-northeast-2",
+                "DeploymentBucketName": "amplify-awsserverlessecommer-prod-10048-deployment",
+                "UnauthRoleName": "amplify-awsserverlessecommer-prod-10048-unauthRole",
+                "StackName": "amplify-awsserverlessecommer-prod-10048",
+                "StackId": "arn:aws:cloudformation:ap-northeast-2:786923391258:stack/amplify-awsserverlessecommer-prod-10048/6d9eee10-5833-11ea-b1c0-0adc0288bd8a",
+                "AmplifyAppId": "dqsqjwayqt68m"
+            }
+        }
+    }heejonglee:~/environment/aws-serverless-ecommerce-front-store/amplify (master) $
+    
+    ```
+5. backend of master change to prod in amplify console.
+
+
+6. backend list
+
+    ```
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store/amplify (master) $ amplify env list
+
+    | Environments |
+    | ------------ |
+    | dev          |
+    | *prod        |
+    
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store/amplify (master) $
+    
+    ```
+
+
+7. backend of local change to dev
+
+    ```
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store/amplify (master) $ amplify env checkout dev
+    ✔ Initialized provider successfully.
+    Initialized your environment successfully.
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store/amplify (master) $ amplify status
+    
+    Current Environment: dev
+    
+    | Category | Resource name | Operation | Provider plugin |
+    | -------- | ------------- | --------- | --------------- |
+
+    heejonglee:~/environment/aws-serverless-ecommerce-front-store/amplify (master) $ 
+    
+    ```
