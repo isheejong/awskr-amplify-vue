@@ -1,0 +1,27 @@
+
+### amplify project 디렉토리 구조
+
+- amplify/.config : cloud confiruration 및 사용자 설정 정보등이 저장된다.
+    > 각 환경별 설정 파일
+    > 프로젝트 설정
+
+- amplify/#current-cloud-backend : 가장 최근에 클라우드에 Provisioned 된 백엔드에 대한 구성
+- amplify/backend : 현재 로컬에서 작업중인 백엔드에 대한 구성 정보
+
+    > https://aws-amplify.github.io/docs/cli-toolchain/usage?sdk=js
+
+- amplify-meta.json : 해당 파일은 위 두개의 backend 디렉토리에 위치하며, 현재 targeting  하는
+백엔드에 대한 정보를 가지고 있다. 백엔드 리소스에 접근하기 위한 메타 정보가 포함되어 있으며,
+amplify add <category> 명령을 통해 생성된 리소스에 대한 정보가 저장되어 있어. 백엔드 구성을
+변경하기 위해 통신하는 정보로 활용된다.
+
+- aws-exports.js : 해당 파일을 애플리케이션에서 백엔드에 접근 하기 위한 메타 정보가 저장되어 있는
+파일이다. 
+
+- team-provider-info.json : 팀 멤버간에 백엔드 리소스를 공유해야하는 경우 해당 파일을 사용할 수 있다.
+  amplify env checkout <environment> 를 통해서 환경을 변경하는 경우,
+  위 파일을 참고해서 해당 하는 백엔드로 변경된다.
+
+  자신의 백엔드 환경을 다른 사람과 공유하고 싶은 경우에, 위 파일을 통해 공유 할 수 있다.
+  
+- backend-config.json

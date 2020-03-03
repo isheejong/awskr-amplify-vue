@@ -1,5 +1,162 @@
-type Todo @model {
-  id: ID!
-  name: String!
-  description: String
+type Comment {
+	id: ID!
+	comment: String!
+}
+
+input CreateTodoInput {
+	id: ID
+	name: String!
+	description: String
+}
+
+input DeleteTodoInput {
+	id: ID
+}
+
+enum ModelAttributeTypes {
+	binary
+	binarySet
+	bool
+	list
+	map
+	number
+	numberSet
+	string
+	stringSet
+	_null
+}
+
+input ModelBooleanInput {
+	ne: Boolean
+	eq: Boolean
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+	ne: Float
+	eq: Float
+	le: Float
+	lt: Float
+	ge: Float
+	gt: Float
+	between: [Float]
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+	ne: ID
+	eq: ID
+	le: ID
+	lt: ID
+	ge: ID
+	gt: ID
+	contains: ID
+	notContains: ID
+	between: [ID]
+	beginsWith: ID
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+	size: ModelSizeInput
+}
+
+input ModelIntInput {
+	ne: Int
+	eq: Int
+	le: Int
+	lt: Int
+	ge: Int
+	gt: Int
+	between: [Int]
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+	ne: Int
+	eq: Int
+	le: Int
+	lt: Int
+	ge: Int
+	gt: Int
+	between: [Int]
+}
+
+enum ModelSortDirection {
+	ASC
+	DESC
+}
+
+input ModelStringInput {
+	ne: String
+	eq: String
+	le: String
+	lt: String
+	ge: String
+	gt: String
+	contains: String
+	notContains: String
+	between: [String]
+	beginsWith: String
+	attributeExists: Boolean
+	attributeType: ModelAttributeTypes
+	size: ModelSizeInput
+}
+
+input ModelTodoConditionInput {
+	name: ModelStringInput
+	description: ModelStringInput
+	and: [ModelTodoConditionInput]
+	or: [ModelTodoConditionInput]
+	not: ModelTodoConditionInput
+}
+
+type ModelTodoConnection {
+	items: [Todo]
+	nextToken: String
+}
+
+input ModelTodoFilterInput {
+	id: ModelIDInput
+	name: ModelStringInput
+	description: ModelStringInput
+	and: [ModelTodoFilterInput]
+	or: [ModelTodoFilterInput]
+	not: ModelTodoFilterInput
+}
+
+type Mutation {
+	createTodo(input: CreateTodoInput!, condition: ModelTodoConditionInput): Todo
+	updateTodo(input: UpdateTodoInput!, condition: ModelTodoConditionInput): Todo
+	deleteTodo(input: DeleteTodoInput!, condition: ModelTodoConditionInput): Todo
+	process(input: CreateTodoInput!, condition: ModelTodoConditionInput): Todo
+}
+
+type Query {
+	getTodo(id: ID!): Todo
+	listTodos(filter: ModelTodoFilterInput, limit: Int, nextToken: String): ModelTodoConnection
+	listTodos2(filter: ModelTodoFilterInput, limit: Int, nextToken: String): ModelTodoConnection
+  listTodos3(filter: ModelTodoFilterInput, limit: Int, nextToken: String): ModelTodoConnection
+}
+
+type Subscription {
+	onCreateTodo: Todo
+		@aws_subscribe(mutations: ["createTodo"])
+	onUpdateTodo: Todo
+		@aws_subscribe(mutations: ["updateTodo"])
+	onDeleteTodo: Todo
+		@aws_subscribe(mutations: ["deleteTodo"])
+}
+
+type Todo {
+	id: ID!
+	name: String!
+	description: String
+}
+
+input UpdateTodoInput {
+	id: ID!
+	name: String
+	description: String
 }

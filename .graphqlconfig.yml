@@ -1,6 +1,6 @@
 projects:
   todoapi:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/todoapi/build/schema.graphql
     includes:
       - ''
     excludes:
