@@ -22,6 +22,7 @@ frontend:
       commands:
         - ls -al
         - cd src/frontend
+        - ls -al
         - npm install
     build:
       commands:
