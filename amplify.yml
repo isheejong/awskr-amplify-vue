@@ -6,7 +6,10 @@ backend:
   phases:
     preBuild:
       commands:
-        - ls -al
+        - npm install -g @aws-amplify/cli@4.13.1
+        - yum install jq -y
+        - python3 -m pip install --upgrade --user cfn-lint aws-sam-cli
+        - aws configure set cli_follow_urlparam false
     build:
       commands:
         - amplifyPush --simple
