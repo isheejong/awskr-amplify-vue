@@ -1,33 +1,33 @@
 version: 0.1
-  env:
-    variables:
-      editor: heejong
-  backend:
-    phases:
-      preBuild:
-        commands:
-          - ls -al
-      build:
-        commands:
-          - amplifyPush --simple
-      postBuild:
-        commands:
-          - ls -al
-  frontend:
-    phases:
-      preBuild:  # install the files to build
-        commands:
-          - ls -al
-          - cd src/frontend
-          - npm install
-      build:
-        commands:
-          - ls -al
-          - npm run build
-    artifacts:
-      baseDirectory: src/frontend/dist
-      files:
-        - '**/*'
-    cache:
-      paths:
-        - src/frontend/node_modules
+env:
+  variables:
+    editor: heejong
+backend:
+  phases:
+    preBuild:
+      commands:
+        - ls -al
+    build:
+      commands:
+        - amplifyPush --simple
+    postBuild:
+      commands:
+        - ls -al
+frontend:
+  phases:
+    preBuild:  # install the files to build
+      commands:
+        - ls -al
+        - cd src/frontend
+        - npm install
+    build:
+      commands:
+        - ls -al
+        - npm run build
+  artifacts:
+    baseDirectory: src/frontend/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - src/frontend/node_modules
