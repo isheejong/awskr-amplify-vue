@@ -18,7 +18,7 @@ import { Notes } from '@/notes';
 import { components, AmplifyEventBus } from 'aws-amplify-vue';
 import Amplify, * as AmplifyModules from 'aws-amplify';
 import { AmplifyPlugin } from 'aws-amplify-vue';
-import AmplifyStore from '../store/store';
+import AmplifyStore from '../store';
 
 
 Vue.use(Router);

@@ -51,7 +51,7 @@
 import { Auth, Storage, Logger } from 'aws-amplify'
 
 
-import AmplifyStore from '../store/store';
+import AmplifyStore from '../store';
 
 
 export default {

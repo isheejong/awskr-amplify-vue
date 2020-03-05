@@ -38,7 +38,7 @@ import Vue from 'vue'
 import { Logger } from 'aws-amplify'
 import { JS } from 'fsts'
 
-import AmplifyStore from '../../store/store'
+import AmplifyStore from '../../store'
 
 import  { CreateTodo, ListTodos, UpdateTodo, DeleteTodo }  from './persist/graphqlActions';
 

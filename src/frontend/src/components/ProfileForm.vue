@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import AmplifyStore from '../store/store'
+import AmplifyStore from '../store'
 
 export default {
   name: 'ProfileForm',

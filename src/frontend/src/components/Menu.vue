@@ -26,7 +26,7 @@
 
 <script>
 import { Auth, Hub } from 'aws-amplify';
-import AmplifyStore from '../store/store';
+import AmplifyStore from '../store';
 
 
 export default {
