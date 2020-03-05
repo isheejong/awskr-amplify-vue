@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '../views/Home'
+import { Menu, Home, Profile } from '@/components';
+import { Notes } from '@/notes';
 import { components, AmplifyEventBus } from 'aws-amplify-vue';
 import Amplify, * as AmplifyModules from 'aws-amplify';
 import { AmplifyPlugin } from 'aws-amplify-vue';
@@ -43,17 +44,38 @@ function getUser() {
 
 const router = new Router({
 routes: [
-    {
+  {
     path: '/',
     name: 'Home',
     component: Home,
     meta: { requiresAuth: true}
+  },
+  {
+    path: '/notes',
+    name: 'Notes',
+    component: Notes,
+    params: {
+      'foo': 'bar'
     },
-    {
+    meta: { requiresAuth: true}
+  },
+  {
+    path: '/menu',
+    name: 'Menu',
+    component: Menu,
+    meta: { requiresAuth: true}
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
+    meta: { requiresAuth: true}
+  },
+  {
     path: '/auth',
     name: 'Authenticator',
     component: components.Authenticator
-    }
+  }
 ]
 });
 
