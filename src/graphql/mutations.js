@@ -8,8 +8,8 @@ export const createTodo = /* GraphQL */ `
   ) {
     createTodo(input: $input, condition: $condition) {
       id
-      name
-      description
+      note
+      done
     }
   }
 `;
@@ -20,8 +20,8 @@ export const updateTodo = /* GraphQL */ `
   ) {
     updateTodo(input: $input, condition: $condition) {
       id
-      name
-      description
+      note
+      done
     }
   }
 `;
@@ -32,20 +32,8 @@ export const deleteTodo = /* GraphQL */ `
   ) {
     deleteTodo(input: $input, condition: $condition) {
       id
-      name
-      description
-    }
-  }
-`;
-export const process = /* GraphQL */ `
-  mutation Process(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
-  ) {
-    process(input: $input, condition: $condition) {
-      id
-      name
-      description
+      note
+      done
     }
   }
 `;

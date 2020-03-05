@@ -1,0 +1,33 @@
+{
+	"auth": {
+		"awskramplifyvue196a8afd": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"api": {
+		"todoapi": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authawskramplifyvue196a8afd"
+						}
+					}
+				}
+			}
+		}
+	},
+	"storage": {
+		"s3c1feee06": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

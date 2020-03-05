@@ -1,0 +1,20 @@
+{
+    "heejong": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-awskr-amplify-vue-heejong-01146-authRole",
+            "UnauthRoleArn": "arn:aws:iam::786923391258:role/amplify-awskr-amplify-vue-heejong-01146-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::786923391258:role/amplify-awskr-amplify-vue-heejong-01146-authRole",
+            "Region": "ap-northeast-2",
+            "DeploymentBucketName": "amplify-awskr-amplify-vue-heejong-01146-deployment",
+            "UnauthRoleName": "amplify-awskr-amplify-vue-heejong-01146-unauthRole",
+            "StackName": "amplify-awskr-amplify-vue-heejong-01146",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:786923391258:stack/amplify-awskr-amplify-vue-heejong-01146/a27c4b20-5ef3-11ea-af8a-0a9c82f11f34",
+            "AmplifyAppId": "d16nrj689z6zbh"
+        },
+        "categories": {
+            "auth": {
+                "awskramplifyvue196a8afd": {}
+            }
+        }
+    }
+}

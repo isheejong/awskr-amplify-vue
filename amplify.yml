@@ -1,0 +1,25 @@
+version: 0.1
+  backend:
+    phases:
+      build:
+        commands:
+          - amplifyPush --simple
+  frontend:
+    phases:
+      preBuild:  # install the files to build
+        commands:
+          - ls -al
+          - cd src/frontend
+          - npm install
+      build:
+        commands:
+          - ls -al
+          - npm run build
+    artifacts:
+      # IMPORTANT - Please verify your build output directory
+      baseDirectory: src/frontend/
+      files:
+        - '**/*'
+    cache:
+      paths:
+        - src/frontend/node_modules
