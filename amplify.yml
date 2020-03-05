@@ -12,7 +12,7 @@ backend:
         - aws configure set cli_follow_urlparam false
     build:
       commands:
-        - amplifyPush --simple
+        - ls -al # amplifyPush --simple
     postBuild:
       commands:
         - ls -al
