@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"awskramplifyvue196a8afd": {
+		"awskramplifyvuea47aaa9d": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],
@@ -17,17 +17,12 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authawskramplifyvue196a8afd"
+							"userPoolId": "authawskramplifyvuea47aaa9d"
 						}
 					}
 				}
 			}
 		}
 	},
-	"storage": {
-		"s3c1feee06": {
-			"service": "S3",
-			"providerPlugin": "awscloudformation"
-		}
-	}
+	"storage": {}
 }
