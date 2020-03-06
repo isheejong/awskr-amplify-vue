@@ -6,6 +6,7 @@ export const getTodo = /* GraphQL */ `
     getTodo(id: $id) {
       id
       note
+      comment
       done
     }
   }
@@ -20,6 +21,7 @@ export const listTodos = /* GraphQL */ `
       items {
         id
         note
+        comment
         done
       }
       nextToken
