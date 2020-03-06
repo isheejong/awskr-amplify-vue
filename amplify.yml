@@ -13,9 +13,7 @@ backend:
     build:
       commands:
         - ls -al
-        - cat amplify.sh
-        - amplifyPush --help
-        - ls -al
+        - amplifyPush --simple
     postBuild:
       commands:
         - ls -al
@@ -25,7 +23,6 @@ frontend:
       commands:
         - ls -al
         - cd src/frontend
-        - ls -al
         - npm install
     build:
       commands:
