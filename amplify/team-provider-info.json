@@ -16,5 +16,23 @@
                 "awskramplifyvuea47aaa9d": {}
             }
         }
+    },
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-awskr-amplify-vue-dev-25007-authRole",
+            "UnauthRoleArn": "arn:aws:iam::786923391258:role/amplify-awskr-amplify-vue-dev-25007-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::786923391258:role/amplify-awskr-amplify-vue-dev-25007-authRole",
+            "Region": "ap-northeast-2",
+            "DeploymentBucketName": "amplify-awskr-amplify-vue-dev-25007-deployment",
+            "UnauthRoleName": "amplify-awskr-amplify-vue-dev-25007-unauthRole",
+            "StackName": "amplify-awskr-amplify-vue-dev-25007",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:786923391258:stack/amplify-awskr-amplify-vue-dev-25007/08173520-5f81-11ea-9e37-02585c47dcf6",
+            "AmplifyAppId": "d24kdl3pyqqhsh"
+        },
+        "categories": {
+            "auth": {
+                "awskramplifyvuea47aaa9d": {}
+            }
+        }
     }
 }
