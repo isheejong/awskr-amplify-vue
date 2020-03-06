@@ -1,5 +1,6 @@
 type Todo @model {
   id: ID!
   note: String!
+  comment: String!
   done: Boolean
 }
