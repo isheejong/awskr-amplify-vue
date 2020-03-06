@@ -1,4 +1,4 @@
-# Getting started
+# 바로 시작하기
 
 1. amplify init --app https://github.com/isheejong/awskr-amplify-vue.git 을 실행하면, 
    URL 로 부터 소스코드를 로컬 디렉토리에 clone 하고 amplify init 과 amplify push 를 실행 합니다.
@@ -7,7 +7,10 @@
 
 3. github 에 연결하고 해당하는 repository를 연결하면 애플리케이션을 배포 할 수 있습니다.
 
-
+    <table><tr><td>
+    <img src="./media/sample_amplify_app.png">
+    </td></tr><table>
+    
 <hr/>
 
 ## amplify 명령어 정리
