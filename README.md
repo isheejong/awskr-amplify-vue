@@ -13,6 +13,10 @@
     
 <hr/>
 
+# 원 클릭 패보
+[![One-click deployment](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/isheejong/awskr-amplify-vue)
+
+</hr>
 ## amplify 명령어 정리
 
 1. amplify init : amplify backend 를 구성할 수 있는  cloud formation root stack 을 생성하며, 3개의 리소를 생성 합니다.
