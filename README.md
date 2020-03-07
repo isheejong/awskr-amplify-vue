@@ -22,11 +22,13 @@
 
   - 프로바이더(Priovider): 로컬 개발환경에서 파일 형태로 정의한 백엔드 리소스를 클라우드 환경에서 생성하는 역활을 하는 도구로서 Amplify 는 기본적으로 amplify-provider-awscloudformation 을 사용합니다.
   </br>
-  - **처음 시작하는 프로젝트 (프로젝트 디렉토리에 amplify 디렉토리가 없는 경우)**: 프로바이더는 클라우드에 리소스를 생성하는 과정에서  Root Stack 과 리소스에 대해서 로그를 제공하며, 최종적으로 amplify-meta.json 파일을 생성합니다. 그리고 명령어가 실행된 디렉토리에 amplify 라는 디렉토리가 생성되며, 해당 디렉토리에는 백엔드 리소스에 대한 정보과 저장됩니다. Root Stack은 AWS Cloud Formation Template 로서 /amplify/backend/awscloudformation 디렉로리 생성됩니다.
+  
+  **처음 시작하는 프로젝트 (프로젝트 디렉토리에 amplify 디렉토리가 없는 경우)**: 프로바이더는 클라우드에 리소스를 생성하는 과정에서  Root Stack 과 리소스에 대해서 로그를 제공하며, 최종적으로 amplify-meta.json 파일을 생성합니다. 그리고 명령어가 실행된 디렉토리에 amplify 라는 디렉토리가 생성되며, 해당 디렉토리에는 백엔드 리소스에 대한 정보과 저장됩니다. Root Stack은 AWS Cloud Formation Template 로서 /amplify/backend/awscloudformation 디렉로리 생성됩니다.
   <br/>
-  - **이미 amplify 디렉토리가 있는 경우**: amplify 디렉토리가 이미 존재하는 경우 (Git Hub 에서 Code를 Clone 한 경우) 에는 해당 파일을 참고하여, aws-exports.js 와 같이 백엔드와 통합 할 수 있는 리소스를 생성합니다. 이 경우는 amplify 디렉토리에 백엔드에 필요한 리소스가 이미 정의가되어 있으므로, 해당 파일을 참고하여 필요한 파일을 생성합니다. 
+  
+  **이미 amplify 디렉토리가 있는 경우**: amplify 디렉토리가 이미 존재하는 경우 (Git Hub 에서 Code를 Clone 한 경우) 에는 해당 파일을 참고하여, aws-exports.js 와 같이 백엔드와 통합 할 수 있는 리소스를 생성합니다. 이 경우는 amplify 디렉토리에 백엔드에 필요한 리소스가 이미 정의가되어 있으므로, 해당 파일을 참고하여 필요한 파일을 생성합니다. 
 
-  - GitHub 에서 Clone과 동시에 amplify backend 리소스 생성
+  **GitHub 에서 Clone과 동시에 amplify backend 리소스 생성**
 
   ```   
   $ amplify init --app <github url>
