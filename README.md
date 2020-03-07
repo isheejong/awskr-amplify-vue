@@ -78,13 +78,13 @@ amplify init 이후에 amplify CLI 를 이용하여 backend 를 구성하는 경
 - 팀 멤버간에 백엔드 리소스를 공유해야하는 경우 해당 파일을 사용할 수 있다. **amplify env checkout \<environment\>** 를 통해서 환경을 변경하는 경우,위 파일을 참고해서 해당 하는 백엔드로 변경된다. 자신의 백엔드 환경을 다른 사람과 공유하고 싶은 경우에, 위 파일을 통해 공유 할 수 있다.
   
 #### backend-config.json
-현재 backend 에 구성되어 있는 리소스에 대한 정보를 포함하고 있다.
+- 현재 backend 에 구성되어 있는 리소스에 대한 정보를 포함하고 있다.
 
 #### amplify/backend/stacks
-cloudformation stacks 을 위한 cloudformation template resource 를 포함하고 있다. 만약에 backend provisioing 을 customization 을 하고 싶다면, 해당 파일을 수정하면된다. 
+- cloudformation stacks 을 위한 cloudformation template resource 를 포함하고 있다. 만약에 backend provisioing 을 customization 을 하고 싶다면, 해당 파일을 수정하면된다. 
 
 #### amplify/backend/build
-backend 에 생생되어야 하는 리소스를 포함하고 있다.lambda function, resolver, pipeline functions, stack 이 포함되어 있다. schema.graphql 을 백엔드에 실제로 생성되는 스키마이다. type mutation, subscrib, query 에 필요한 리소스가 /amplify/backend/schema.graphql 을 기반으로 생성된다.
+- backend 에 생생되어야 하는 리소스를 포함하고 있다.lambda function, resolver, pipeline functions, stack 이 포함되어 있다. schema.graphql 을 백엔드에 실제로 생성되는 스키마이다. type mutation, subscrib, query 에 필요한 리소스가 /amplify/backend/schema.graphql 을 기반으로 생성된다.
 
 
 
